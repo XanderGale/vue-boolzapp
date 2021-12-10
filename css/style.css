@@ -7,6 +7,8 @@
 
 /* Common */
 body{
+    font-family: 'Roboto', sans-serif;
+
     position: relative;
 
     width: 100%;
@@ -68,14 +70,51 @@ main{
     height: 100%;
 }
 .app-col-header{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    align-items: center;
+
     height: 10%;
     width: 100%;
 }
+.user-img-container{
+    height: 100%;
+}
+.img-avatar{
+    height: 100%;
+    padding: 10px;
+
+    border-radius: 50%;
+}
+.info-container{
+    height: 100%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+
+    flex-grow: 1;
+}
+.lastseen{
+    font-size: 0.7rem;
+    color: gray;
+}
 .app-col-main{
-    min-height: 80%;
+    flex-grow: 1;
     width: 100%;
 }
+.app-col.right .app-col-main{
+    background-image: url(../img/mine.jpg);
+    background-repeat: repeat;
+}
 .app-col-footer{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+
     height: 10%;
     width: 100%;
 }
