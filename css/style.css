@@ -17,6 +17,14 @@ body{
 .bg-lightgray{
     background-color: #eaeaea;
 }
+body #app-container input{
+    border: none;
+    width: 80%;
+    border-radius: 5px;
+}
+body #app-container input:focus-visible{
+    outline: none;
+}
 
 /* Header */
 header{
@@ -113,7 +121,7 @@ main{
     align-items: flex-start;
     align-items: center;
 
-    border-bottom: 1px solid lightgray;
+    border-bottom: 1px solid #eaeaea;
 
     height: 75px;
     width: 100%;
@@ -124,14 +132,27 @@ main{
     background-image: url(../img/mine.jpg);
     background-repeat: repeat;
 }
-.app-col-footer{
+.sendmessage-container{
     display: flex;
     flex-flow: row nowrap;
-    justify-content: flex-start;
+    justify-content: space-around;
     align-items: center;
 
+    padding: 10px;
     height: 10%;
     width: 100%;
+}
+.sendmessage-container input{
+    height: 90%;
+    padding: 10px;
+
+    overflow-y: auto;
+}
+.sendmessage-container i{
+    color: rgb(168, 168, 168);
+    font-size: 1.5rem;
+
+    cursor: pointer;
 }
 .actions-container{
     margin: 20px;
@@ -210,16 +231,8 @@ main{
     width: calc(100% - 10px);
 
     background-color: white;
-    border: 1px solid lightgray;
 
-    border-radius: 3px;
-}
-.search-chat input{
-    border: none;
-    width: 90%;
-}
-.search-chat input:focus-visible{
-    outline: none;
+    border-radius: 5px;
 }
 .search-chat i{
     margin: auto 20px;
