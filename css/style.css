@@ -118,7 +118,7 @@ main{
 .contact-container{
     display: flex;
     flex-flow: row nowrap;
-    align-items: flex-start;
+    justify-content: flex-start;
     align-items: center;
 
     border-bottom: 1px solid #eaeaea;
@@ -131,6 +131,46 @@ main{
     width: 100%;
     background-image: url(../img/mine.jpg);
     background-repeat: repeat;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    padding: 20px;
+}
+.message-container{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    border-radius: 5px;
+
+    width: fit-content;
+    max-width: 40%;
+
+    margin-bottom: 10px;
+}
+.message-container.sent{
+    background-color: #d5f9ba;
+    align-self: flex-end;
+}
+.message-container.received{
+    background-color: white;
+    align-self: flex-start;
+}
+.message-container span{
+    display: block;
+}
+.message-text{
+    padding: 5px;
+}
+.message-date{
+    float: right;
+
+    font-size: 0.5rem;
+    color: lightgray;
 }
 .sendmessage-container{
     display: flex;
