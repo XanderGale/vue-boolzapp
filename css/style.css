@@ -101,11 +101,26 @@ main{
     font-size: 0.7rem;
     color: gray;
 }
-.app-col-main{
+.contactslist-container{
     flex-grow: 1;
     width: 100%;
+
+    overflow-x: auto;
 }
-.app-col.right .app-col-main{
+.contact-container{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    align-items: center;
+
+    border-bottom: 1px solid lightgray;
+
+    height: 75px;
+    width: 100%;
+}
+.chat-container{
+    flex-grow: 1;
+    width: 100%;
     background-image: url(../img/mine.jpg);
     background-repeat: repeat;
 }
@@ -119,11 +134,96 @@ main{
     width: 100%;
 }
 .actions-container{
-    padding: 20px;
+    margin: 20px;
 }
 .actions-container i{
     cursor: pointer;
 
     padding: 5px;
     color: lightgray;
+}
+.notify-container{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    background-color: lightskyblue;
+
+    height: 10%;
+    width: 100%;
+
+    padding: 10px;
+}
+.notify-img-container{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+    background-color: white;
+    color: lightskyblue;
+
+    height: 80%;
+    width: 15%;
+    max-width: 25px;
+    padding: 5%;
+
+    border-radius: 50%;
+}
+.notify-info-container{
+    height: 100%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+
+    flex-grow: 1;
+
+    padding: 10px;
+}
+.notify-info-container a{
+    text-decoration: underline;
+    color: #009587;
+
+    font-size: 0.75rem;
+}
+.search-chat-container{
+    width: 100%;
+    height: 5%;
+
+    background-color: #fafafa;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.search-chat{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    height: calc(100% - 10px);
+    width: calc(100% - 10px);
+
+    background-color: white;
+    border: 1px solid lightgray;
+
+    border-radius: 3px;
+}
+.search-chat input{
+    border: none;
+    width: 90%;
+}
+.search-chat input:focus-visible{
+    outline: none;
+}
+.search-chat i{
+    margin: auto 20px;
+    color: lightgray;
+
+    font-size: 0.75rem;
 }

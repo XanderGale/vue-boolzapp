@@ -49,7 +49,43 @@
 
                 </div>
 
-                <div class="app-col-main">
+                <div class="notify-container">
+
+                    <div class="notify-img-container">
+                        <i class="fas fa-bell-slash"></i>
+                    </div>
+
+                    <div class="notify-info-container">
+                        <span>Ricevi notifiche di nuovi messaggi</span>
+                        <a id="toggle-notify" href="#">Attiva notifiche desktop</a>
+                    </div>
+                        
+                </div>
+
+                <div class="search-chat-container">
+
+                    <div class="search-chat">
+
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Cerca o inizia nuova chat">
+
+                    </div>
+
+                </div>
+
+                <div class="contactslist-container">
+
+                    <div v-for="contact in contacts" class="contact-container">
+                        
+                        <div class="user-img-container">
+                            <img class="img-avatar" :src="'img/avatar' + contact.avatar + '.jpg'" :alt=" contact.name + ' avatar'">
+                        </div>
+    
+                        <div class="info-container">
+                            <span>{{ contact.name }}</span>
+                        </div>
+
+                    </div>
 
                 </div>
 
@@ -76,7 +112,7 @@
 
                 </div>
 
-                <div class="app-col-main">
+                <div class="chat-container">
 
                 </div>
 
