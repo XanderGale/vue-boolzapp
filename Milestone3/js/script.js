@@ -5,6 +5,7 @@ const boolzapp_chat = new Vue({
     data: {
         now: dayjs().format('DD/MM/YYYY HH:mm:ss'),
         newMessage: '',
+        filterContact: '',
         activeContact: 0,
         contacts: [
             {
