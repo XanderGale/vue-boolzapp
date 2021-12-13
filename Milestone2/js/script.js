@@ -1,8 +1,9 @@
 Vue.config.devtools = true
 
-const boolzapp = new Vue({
+const boolzapp_chat = new Vue({
     el: '#app-container',
     data: {
+        activeContact: 0,
         contacts: [
             {
                 name: 'Michele',
@@ -87,6 +88,11 @@ const boolzapp = new Vue({
                     }
                 ],
             },
-        ]        
-    }
+        ],        
+    },
+    methods: {
+        showContactMessages: function(index){
+            this.activeContact = index;
+        }
+    },
 })
