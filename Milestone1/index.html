@@ -20,135 +20,127 @@
 </head>
 <body>
 
-    <header>
-        
-    </header>
+    <div id="app-container">
 
-    <main>
-
-        <div id="app-container">
-
-            <div class="app-col left">
+        <div class="app-col left">
 
 
-                <div class="user-container bg-lightgray">
+            <div class="user-container bg-lightgray">
 
-                    <div class="user-img-container">
-                        <img class="img-avatar" src="img/avatar_io.jpg" alt="user pfp">
-                    </div>
-
-                    <div class="info-container">
-                        <span class="username">Nome Utente</span>
-                    </div>
-
-                    <div class="actions-container">
-                        <i class="fas fa-circle-notch"></i>
-                        <i class="fas fa-comment-alt"></i>
-                        <i class="fas fa-ellipsis-v"></i>
-                    </div>
-
+                <div class="user-img-container">
+                    <img class="img-avatar" src="img/avatar_io.jpg" alt="user pfp">
                 </div>
 
-                <div class="notify-container">
-
-                    <div class="notify-img-container">
-                        <i class="fas fa-bell-slash"></i>
-                    </div>
-
-                    <div class="notify-info-container">
-                        <span>Ricevi notifiche di nuovi messaggi</span>
-                        <a id="toggle-notify" href="#">Attiva notifiche desktop</a>
-                    </div>
-                        
+                <div class="info-container">
+                    <span class="username">Nome Utente</span>
                 </div>
 
-                <div class="search-chat-container">
-
-                    <div class="search-chat">
-
-                        <i class="fas fa-search"></i>
-                        <input type="text" placeholder="Cerca o inizia nuova chat">
-
-                    </div>
-
+                <div class="actions-container">
+                    <i class="fas fa-circle-notch"></i>
+                    <i class="fas fa-comment-alt"></i>
+                    <i class="fas fa-ellipsis-v"></i>
                 </div>
 
-                <div class="contactslist-container">
+            </div>
 
-                    <div v-for="contact in contacts" class="contact-container">
-                        
-                        <div class="user-img-container">
-                            <img class="img-avatar" :src="'img/avatar' + contact.avatar + '.jpg'" :alt=" contact.name + ' avatar'">
-                        </div>
-    
-                        <div class="info-container">
-                            <span>{{ contact.name }}</span>
-                        </div>
+            <div class="notify-container">
 
-                    </div>
+                <div class="notify-img-container">
+                    <i class="fas fa-bell-slash"></i>
+                </div>
+
+                <div class="notify-info-container">
+                    <span>Ricevi notifiche di nuovi messaggi</span>
+                    <a id="toggle-notify" href="#">Attiva notifiche desktop</a>
+                </div>
+                    
+            </div>
+
+            <div class="search-chat-container">
+
+                <div class="search-chat">
+
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Cerca o inizia nuova chat">
 
                 </div>
 
             </div>
 
-            <div class="app-col right">
+            <div class="contactslist-container">
 
-                <div class="user-container bg-lightgray">
-
+                <div v-for="contact in contacts" class="contact-container">
+                    
                     <div class="user-img-container">
-                        <img class="img-avatar" src="img/avatar_3.jpg" alt="avatar3 pfp">
+                        <img class="img-avatar" :src="'img/avatar' + contact.avatar + '.jpg'" :alt=" contact.name + ' avatar'">
                     </div>
 
                     <div class="info-container">
-                        <span class="username">Samuele</span>
-                        <span class="lastseen">Ultimo accesso alle:</span>
+                        <span>{{ contact.name }}</span>
                     </div>
-
-                    <div class="actions-container">
-                        <i class="fas fa-search"></i>
-                        <i class="fas fa-paperclip"></i>
-                        <i class="fas fa-ellipsis-v"></i>
-                    </div>
-
-                </div>
-
-                <div class="chat-container">
-
-                    <div class="message-container received">
-                        
-                        <div class="message-text">
-                            <span class="message-text">Messaggio test</span>
-                            <span class="message-date">28-05-1990</span>
-                        </div>
-
-                    </div>
-
-                    <div class="message-container sent">
-                        
-                        <div class="message-text">
-                            <span class="message-text">Messaggio test</span>
-                            <span class="message-date">28-05-1990</span>
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="sendmessage-container bg-lightgray">
-
-                    <i class="far fa-smile"></i>
-
-                    <input type="text" placeholder="Scrivi un messaggio">
-
-                    <i class="fas fa-microphone"></i>
 
                 </div>
 
             </div>
 
         </div>
-        
-    </main>
+
+        <div class="app-col right">
+
+            <div class="user-container bg-lightgray">
+
+                <div class="user-img-container">
+                    <img class="img-avatar" src="img/avatar_3.jpg" alt="avatar3 pfp">
+                </div>
+
+                <div class="info-container">
+                    <span class="username">Samuele</span>
+                    <span class="lastseen">Ultimo accesso alle:</span>
+                </div>
+
+                <div class="actions-container">
+                    <i class="fas fa-search"></i>
+                    <i class="fas fa-paperclip"></i>
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+
+            </div>
+
+            <div class="chat-container">
+
+                <div class="message-container received">
+                    
+                    <div class="message-text">
+                        <span class="message-text">Messaggio test</span>
+                        <span class="message-date">28-05-1990</span>
+                    </div>
+
+                </div>
+
+                <div class="message-container sent">
+                    
+                    <div class="message-text">
+                        <span class="message-text">Messaggio test</span>
+                        <span class="message-date">28-05-1990</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="sendmessage-container bg-lightgray">
+
+                <i class="far fa-smile"></i>
+
+                <input type="text" placeholder="Scrivi un messaggio">
+
+                <i class="fas fa-microphone"></i>
+
+            </div>
+
+        </div>
+
+    </div>
     
     
 
