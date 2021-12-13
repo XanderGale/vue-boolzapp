@@ -5,7 +5,7 @@ const boolzapp_chat = new Vue({
     data: {
         now: dayjs().format('DD/MM/YYYY HH:mm:ss'),
         newMessage: '',
-        filterContact: '',
+        searchContact: '',
         activeContact: 0,
         contacts: [
             {
@@ -117,6 +117,15 @@ const boolzapp_chat = new Vue({
                 text: 'Scusa ora non posso parlare.',
                 status: 'received'
             })
+        },
+        searchInContacts: function(){
+            this.contacts.forEach(contact => {
+                if (contact.name.toLowerCase().includes(this.searchContact.toLowerCase()) ){
+                    contact.visible = true;
+                } else {
+                    contact.visible = false;
+                }
+            });
         }
     },
 })
