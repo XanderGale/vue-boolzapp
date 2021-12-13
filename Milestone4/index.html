@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolzapp</title>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <div id="app-container">
+
+        <div class="app-col left">
+
+
+            <div class="user-container bg-lightgray">
+
+                <div class="user-img-container">
+                    <img class="img-avatar" src="img/avatar_io.jpg" alt="user pfp">
+                </div>
+
+                <div class="info-container">
+                    <span class="username">Nome Utente</span>
+                </div>
+
+                <div class="actions-container">
+                    <i class="fas fa-circle-notch"></i>
+                    <i class="fas fa-comment-alt"></i>
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+
+            </div>
+
+            <div class="notify-container">
+
+                <div class="notify-img-container">
+                    <i class="fas fa-bell-slash"></i>
+                </div>
+
+                <div class="notify-info-container">
+                    <span>Ricevi notifiche di nuovi messaggi</span>
+                    <a id="toggle-notify" href="#">Attiva notifiche desktop</a>
+                </div>
+                    
+            </div>
+
+            <div class="search-chat-container">
+
+                <div class="search-chat">
+
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Cerca o inizia nuova chat">
+
+                </div>
+
+            </div>
+
+            <div class="contactslist-container">
+
+                <div @click="showContactMessages(index)" v-for="(contact, index) in contacts" class="contact-container" :class="{ 'bg-lightgray' : index === activeContact }">
+                    
+                    <div class="user-img-container">
+                        <img class="img-avatar" :src="'img/avatar' + contact.avatar + '.jpg'" :alt=" contact.name + ' avatar'">
+                    </div>
+
+                    <div class="info-container">
+                        <span>{{ contacts[index].name }}</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="app-col right">
+
+            <div class="user-container bg-lightgray">
+
+                <div class="user-img-container">
+                    <img class="img-avatar" :src="'img/avatar' + contacts[activeContact].avatar + '.jpg'" :alt=" contacts[activeContact].name + ' avatar'">
+                </div>
+
+                <div class="info-container">
+                    <span class="username">{{ contacts[activeContact].name }}</span>
+                    <span class="lastseen">Ultimo accesso:</span>
+                </div>
+
+                <div class="actions-container">
+                    <i class="fas fa-search"></i>
+                    <i class="fas fa-paperclip"></i>
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+
+            </div>
+
+            <div class="chat-container">
+
+                <div v-for="message in contacts[activeContact].messages" class="message-container" :class=" message.status ">
+                    
+                    <div class="message-text">
+                        <span class="message-text"> {{ message.text }} </span>
+                        <span class="message-date"> {{ message.date }} </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="sendmessage-container bg-lightgray">
+
+                <i class="far fa-smile"></i>
+
+                <input @keyup.enter="sendMessage" v-model="newMessage" type="text" placeholder="Scrivi un messaggio">
+
+                <i class="fas fa-microphone"></i>
+
+            </div>
+
+        </div>
+
+    </div>
+    
+    
+
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
