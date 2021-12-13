@@ -3,6 +3,8 @@ Vue.config.devtools = true
 const boolzapp_chat = new Vue({
     el: '#app-container',
     data: {
+        now: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+        newMessage: '',
         activeContact: 0,
         contacts: [
             {
@@ -93,6 +95,27 @@ const boolzapp_chat = new Vue({
     methods: {
         showContactMessages: function(index){
             this.activeContact = index;
+        },
+        sendMessage: function(){
+            const trimNewMessage = this.newMessage.trim();
+            if (trimNewMessage.length > 1) {
+                this.contacts[this.activeContact].messages.push({
+                    date: this.now,
+                    text: this.newMessage,
+                    status: 'sent'
+                });
+            };
+            this.newMessage = '';
+            setTimeout(() => {
+                this.receiveMessage();
+            }, 1000);
+        },
+        receiveMessage: function(){
+            this.contacts[this.activeContact].messages.push({
+                date: this.now,
+                text: 'Scusa ora non posso parlare.',
+                status: 'received'
+            })
         }
     },
 })

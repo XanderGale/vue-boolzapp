@@ -90,12 +90,12 @@
             <div class="user-container bg-lightgray">
 
                 <div class="user-img-container">
-                    <img class="img-avatar" src="img/avatar_3.jpg" alt="avatar3 pfp">
+                    <img class="img-avatar" :src="'img/avatar' + contacts[activeContact].avatar + '.jpg'" :alt=" contacts[activeContact].name + ' avatar'">
                 </div>
 
                 <div class="info-container">
-                    <span class="username">Samuele</span>
-                    <span class="lastseen">Ultimo accesso alle:</span>
+                    <span class="username">{{ contacts[activeContact].name }}</span>
+                    <span class="lastseen">Ultimo accesso:</span>
                 </div>
 
                 <div class="actions-container">
@@ -107,24 +107,6 @@
             </div>
 
             <div class="chat-container">
-
-                <!-- <div class="message-container received">
-                    
-                    <div class="message-text">
-                        <span class="message-text">Messaggio test</span>
-                        <span class="message-date">28-05-1990</span>
-                    </div>
-
-                </div>
-
-                <div class="message-container sent">
-                    
-                    <div class="message-text">
-                        <span class="message-text">Messaggio test</span>
-                        <span class="message-date">28-05-1990</span>
-                    </div>
-
-                </div> -->
 
                 <div v-for="message in contacts[activeContact].messages" class="message-container" :class=" message.status ">
                     
