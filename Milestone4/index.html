@@ -43,7 +43,7 @@
 
             </div>
 
-            <div class="notify-container">
+            <div v-show="notifications === false" class="notify-container">
 
                 <div class="notify-img-container">
                     <i class="fas fa-bell-slash"></i>
@@ -51,7 +51,7 @@
 
                 <div class="notify-info-container">
                     <span>Ricevi notifiche di nuovi messaggi</span>
-                    <a id="toggle-notify" href="#">Attiva notifiche desktop</a>
+                    <a @click="notifications = true" id="toggle-notify" href="#">Attiva notifiche desktop</a>
                 </div>
                     
             </div>

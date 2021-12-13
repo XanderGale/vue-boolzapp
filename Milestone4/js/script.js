@@ -3,6 +3,7 @@ Vue.config.devtools = true
 const boolzapp_chat = new Vue({
     el: '#app-container',
     data: {
+        notifications: false,
         now: dayjs().format('DD/MM/YYYY HH:mm:ss'),
         newMessage: '',
         searchContact: '',
@@ -126,6 +127,6 @@ const boolzapp_chat = new Vue({
                     contact.visible = false;
                 }
             });
-        }
+        },
     },
 })
