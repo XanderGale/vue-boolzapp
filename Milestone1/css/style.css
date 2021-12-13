@@ -7,6 +7,8 @@
 
 /* Common */
 body{
+    background: linear-gradient(to bottom, #009688 0px, #009688 15vh, #dddbd1 15vh, #d2dbdc 100%);
+
     font-family: 'Roboto', sans-serif;
 
     position: relative;
@@ -24,22 +26,6 @@ body #app-container input{
 }
 body #app-container input:focus-visible{
     outline: none;
-}
-
-/* Header */
-header{
-    background-color: #009587;
-
-    height: 20%;
-    width: 100%;
-}
-
-/* Main */
-main{
-    background-image: linear-gradient(#dcdbd0, #d0d9da);
-
-    height: 80%;
-    width: 100%;
 }
 
 /* App */
