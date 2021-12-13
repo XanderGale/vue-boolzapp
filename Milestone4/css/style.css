@@ -91,6 +91,9 @@ body #app-container input:focus-visible{
 
     flex-grow: 1;
 }
+.info-container > *{
+    padding: 1px;
+}
 .lastseen{
     font-size: 0.7rem;
     color: gray;
@@ -102,6 +105,8 @@ body #app-container input:focus-visible{
     overflow-x: auto;
 }
 .contact-container{
+    cursor: pointer;
+
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
@@ -129,16 +134,17 @@ body #app-container input:focus-visible{
 }
 .message-container{
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: column wrap;
     justify-content: flex-start;
     align-items: center;
 
     border-radius: 5px;
 
-    width: fit-content;
-    max-width: 40%;
+    min-width: 10%;
+    max-width: 60%;
 
     margin-bottom: 10px;
+    padding: 3px;
 }
 .message-container.sent{
     background-color: #d5f9ba;
@@ -150,6 +156,8 @@ body #app-container input:focus-visible{
 }
 .message-container span{
     display: block;
+    word-wrap: break-word;
+    word-break: break-all;
 }
 .message-text{
     padding: 5px;
@@ -183,6 +191,9 @@ body #app-container input:focus-visible{
 
     cursor: pointer;
 }
+.sendmessage-container i:hover{
+    color: lightskyblue;
+}
 .actions-container{
     margin: 20px;
 }
@@ -191,6 +202,9 @@ body #app-container input:focus-visible{
 
     padding: 5px;
     color: lightgray;
+}
+.actions-container i:hover{
+    color: lightskyblue;
 }
 .notify-container{
     display: flex;

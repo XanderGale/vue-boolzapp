@@ -99,17 +99,17 @@ const boolzapp_chat = new Vue({
         },
         sendMessage: function(){
             const trimNewMessage = this.newMessage.trim();
-            if (trimNewMessage.length > 1) {
+            if (trimNewMessage.length > 0) {
                 this.contacts[this.activeContact].messages.push({
                     date: this.now,
                     text: this.newMessage,
                     status: 'sent'
                 });
+                setTimeout(() => {
+                    this.receiveMessage();
+                }, 1000);
             };
             this.newMessage = '';
-            setTimeout(() => {
-                this.receiveMessage();
-            }, 1000);
         },
         receiveMessage: function(){
             this.contacts[this.activeContact].messages.push({
