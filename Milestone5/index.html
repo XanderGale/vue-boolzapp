@@ -76,7 +76,9 @@
                     </div>
 
                     <div class="info-container">
-                        <span>{{ contacts[index].name }}</span>
+                        <span class="lastcontactmessage-date"> {{ contact.messages[ contact.messages.length - 1 ].date }} </span>
+                        <span>{{ contact.name }}</span>
+                        <span class="lastcontactmessage"> {{ contact.messages[ contact.messages.length - 1 ].text }} </span>
                     </div>
 
                 </div>
@@ -95,7 +97,7 @@
 
                 <div class="info-container">
                     <span class="username">{{ contacts[activeContact].name }}</span>
-                    <span class="lastseen">Ultimo accesso:</span>
+                    <span class="lastseen">Ultimo accesso: {{ contacts[activeContact].messages[ contacts[activeContact].messages.length - 1 ].date }} </span>
                 </div>
 
                 <div class="actions-container">
@@ -134,7 +136,6 @@
     </div>
     
     
-
     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
 </body>

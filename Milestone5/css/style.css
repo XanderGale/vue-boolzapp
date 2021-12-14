@@ -106,6 +106,7 @@ body #app-container input:focus-visible{
 }
 .contact-container{
     cursor: pointer;
+    position: relative;
 
     display: flex;
     flex-flow: row nowrap;
@@ -116,6 +117,20 @@ body #app-container input:focus-visible{
 
     height: 75px;
     width: 100%;
+}
+.lastcontactmessage{
+    color: gray;
+    font-size: 0.75rem;
+
+    overflow: hidden;
+}
+.lastcontactmessage-date{
+    color: gray;
+    font-size: 0.7rem;
+    
+    position: absolute;
+    top: 5px;
+    right: 5px;
 }
 .chat-container{
     flex-grow: 1;
