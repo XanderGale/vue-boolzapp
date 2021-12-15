@@ -122,7 +122,7 @@
                     <div v-if="activeMessage === index" class="toggle-messagemenu">
 
                         <span>info messaggio</span>
-                        <span>elimina messaggio</span>
+                        <span @click="deleteMessage(index)">elimina messaggio</span>
 
                     </div>
 
