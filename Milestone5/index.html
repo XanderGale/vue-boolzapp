@@ -108,13 +108,22 @@
 
             </div>
 
-            <div class="chat-container">
+            <div @mouseleave="activeMessage = null" class="chat-container">
 
-                <div v-for="message in contacts[activeContact].messages" class="message-container" :class=" message.status ">
+                <div v-for="(message, index) in contacts[activeContact].messages" class="message-container" :class=" message.status ">
+
+                    <i @click="openToggleMessageMenu(index)" class="toggle-messagemenu-arrow fas fa-angle-down"></i>
                     
                     <div class="message-text">
                         <span class="message-text"> {{ message.text }} </span>
                         <span class="message-date"> {{ message.date }} </span>
+                    </div>
+
+                    <div v-if="activeMessage === index" class="toggle-messagemenu">
+
+                        <span>info messaggio</span>
+                        <span>elimina messaggio</span>
+
                     </div>
 
                 </div>

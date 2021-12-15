@@ -151,15 +151,54 @@ body #app-container input:focus-visible{
     display: flex;
     flex-flow: column wrap;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
+
+    position: relative;
 
     border-radius: 5px;
 
-    min-width: 10%;
+    min-width: 20%;
     max-width: 60%;
 
     margin-bottom: 10px;
     padding: 3px;
+}
+.toggle-messagemenu-arrow{
+    visibility: hidden;
+    background-color: lightgray;
+    color: darkslategray;
+
+    cursor: pointer;
+
+    position: absolute;
+    top: -10px;
+    right: -10px;
+
+    padding: 5px 7px;
+    border-radius: 50%;
+}
+.toggle-messagemenu{
+    background-color: white;
+    color: darkslategray;
+    box-shadow: 5px 5px 20px 1px rgba(56, 56, 56, 0.315);
+
+    padding: auto 10px;
+
+    position: absolute;
+    top: 105%;
+    right: 0;
+    z-index: 5;
+}
+.toggle-messagemenu span{
+    font-size: 0.8rem;
+    margin: 10px;
+}
+.toggle-messagemenu span:hover{
+    color: lightgray;
+    cursor: pointer;
+}
+.message-container:hover .toggle-messagemenu-arrow{
+    visibility: visible;
 }
 .message-container.sent{
     background-color: #d5f9ba;
@@ -175,10 +214,12 @@ body #app-container input:focus-visible{
     word-break: break-all;
 }
 .message-text{
-    padding: 5px;
+    padding: 7px 5px;
 }
 .message-date{
-    float: right;
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
 
     font-size: 0.5rem;
     color: lightgray;
